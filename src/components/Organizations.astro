@@ -15,7 +15,7 @@ const { organizations } = Astro.props;
     organizations.map(({ name, summary, image, linkPreview, linkSource }, index) => {
       const top = 98 + index * 40;
       return (
-        <div
+            <div
           style={`top: ${top}px;`}
           class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black"
         >
