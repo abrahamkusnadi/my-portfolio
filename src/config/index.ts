@@ -1,35 +1,41 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Alejandro Múnez — Mobile & Web Developer",
-  author: "Alejandro Múnez Cuntez",
+  title: "Abraham Kusnadi — Backend Developer",
+  author: "Abraham Kusnadi",
   description:
-    "Software Engineer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
+    "Computer Science student and Backend Developer Intern based in Jakarta, Indonesia. I specialize in server-side architecture development and data infrastructure.",
   lang: "en",
-  siteLogo: "/alejandro-small.jpg",
+  siteLogo: "/abraham-kusnadi-small.jpeg",
   navLinks: [
+    { text: "About", href: "#about" },
     { text: "Experience", href: "#experience" },
     { text: "Projects", href: "#projects" },
-    { text: "About", href: "#about" },
+    { text: "Organization", href: "#organizations" },
   ],
   socialLinks: [
-    { text: "Twitter", href: "https://github.com/immois/astro-zen" },
-    { text: "LinkedIn", href: "https://github.com/immois/astro-zen" },
-    { text: "Github", href: "https://github.com/immois/astro-zen" },
-    { text: "Youtube", href: "https://github.com/immois/astro-zen" },
-    { text: "Dribbble", href: "https://github.com/immois/astro-zen" },
+    { text: "LinkedIn", href: "https://www.linkedin.com/in/abraham-kusnadi" },
+    { text: "Github", href: "https://github.com/abrahamkusnadi" },
   ],
   socialImage: "/zen-og.png",
-  canonicalURL: "https://astro-zen.vercel.app",
+  canonicalURL: "https://abrahamkusnadi.vercel.app/",
 };
 
 export const SITE_CONTENT: SiteContent = {
   hero: {
-    name: "Alejandro Múnez",
-    specialty: "Mobile & Web Developer",
+    name: "Abraham Kusnadi",
+    specialty: "Software Engineer & Backend Developer",
     summary:
-      "Developer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
-    email: "example@email.com",
+      "Undergraduate Computer Science student specializing in server-side architecture development and data infrastructure.",
+    email: "abrahamkusnadi@gmail.com.com",
+  },
+  about: {
+    description: `
+      Hi, I’m Alejandro Múnez, a passionate Mobile and Web Developer with a knack for crafting seamless digital experiences. With a strong background in both Android and iOS development, as well as front-end web technologies, I thrive in the intersection where creativity meets technology.
+
+      Over the years, I’ve honed my skills in building robust, user-friendly applications that not only meet the needs of users but also push the boundaries of what’s possible. My projects range from innovative mobile applications to responsive web designs, all with a focus on performance, security, and scalability.
+    `,
+    image: "/abraham-kusnadi-big.png",
   },
   experience: [
     {
@@ -85,14 +91,15 @@ export const SITE_CONTENT: SiteContent = {
       image: "/clone-ig.png",
     },
   ],
-  about: {
-    description: `
-      Hi, I’m Alejandro Múnez, a passionate Mobile and Web Developer with a knack for crafting seamless digital experiences. With a strong background in both Android and iOS development, as well as front-end web technologies, I thrive in the intersection where creativity meets technology.
-
-      Over the years, I’ve honed my skills in building robust, user-friendly applications that not only meet the needs of users but also push the boundaries of what’s possible. My projects range from innovative mobile applications to responsive web designs, all with a focus on performance, security, and scalability.
-    `,
-    image: "/alejandro-big.jpg",
-  },
+  organizations: [
+    {
+      name: "Spotifu Music",
+      summary: "A music streaming app that emulates Spotify's core features.",
+      linkPreview: "/",
+      linkSource: "https://github.com/immois/astro-zen",
+      image: "/spotifu.png",
+    },
+  ],
 };
 
 // #5755ff
