@@ -31,9 +31,9 @@ export const SITE_CONTENT: SiteContent = {
   },
   about: {
     description: `
-      Hi, I’m Alejandro Múnez, a passionate Mobile and Web Developer with a knack for crafting seamless digital experiences. With a strong background in both Android and iOS development, as well as front-end web technologies, I thrive in the intersection where creativity meets technology.
+      Hi, I’m Abraham Kusnadi, a passionate Software Engineer with a primary focus on Backend Development and Database Architecture. As a Computer Science student at BINUS University, I’ve honed my skills in building scalable systems using Go, Java, and PHP (Laravel), always prioritizing performance, security, and seamless integration.
 
-      Over the years, I’ve honed my skills in building robust, user-friendly applications that not only meet the needs of users but also push the boundaries of what’s possible. My projects range from innovative mobile applications to responsive web designs, all with a focus on performance, security, and scalability.
+Beyond writing code, I actively contribute to my campus tech community as a Backend Development Mentor at BNCC, guiding fellow students in mastering database concepts and backend frameworks. Whether I am orchestrating automated services, designing normalized databases, or conducting end-to-end testing, I am driven by the challenge of solving complex technical problems and delivering high-quality, reliable software solutions.
     `,
     image: "/abraham-kusnadi-big.png",
   },
