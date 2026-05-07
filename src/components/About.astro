@@ -9,16 +9,37 @@ const { description, image, name } = Astro.props;
 ---
 
 <Section text="About Me" href="about">
-  <div class="flex flex-col items-center gap-12 md:flex-row md:gap-8">
-    <p class="w-auto text-base text-neutral md:pr-5">{description}</p>
-    <div class="h-80 w-64 shrink-0 rotate-[5deg] bg-white p-4 md:rotate-[7deg]">
-      <Image
-        class="object-cover"
-        src={image}
-        width="260"
-        height="260"
-        alt={name}
-      />
+  <div class="flex flex-col-reverse items-center gap-12 md:flex-row md:items-start md:gap-16">
+    <div class="flex-1 space-y-6">
+      <p class="text-base leading-relaxed text-neutral/90 md:text-lg text-justify sm:text-left">
+        {description}
+      </p>
+
+      <div class="flex flex-wrap gap-3 pt-2 font-mono text-xs sm:text-sm">
+        <span class="rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-primary transition-colors hover:bg-primary/20">Backend Architecture</span>
+        <span class="rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-primary transition-colors hover:bg-primary/20">API Integration</span>
+        <span class="rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-primary transition-colors hover:bg-primary/20">Tech Mentor</span>
+      </div>
+    </div>
+
+    <div class="group relative shrink-0">
+      <div class="relative h-80 w-64 rotate-[4deg] rounded-lg bg-white p-3 shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-500 group-hover:rotate-0 group-hover:scale-105 group-hover:shadow-2xl md:rotate-[6deg]">
+        <div class="absolute -top-3 left-1/2 z-10 h-6 w-20 -translate-x-1/2 -rotate-2 rounded-sm bg-white/60 shadow-sm backdrop-blur-md"></div>
+        <div class="h-full w-full overflow-hidden rounded bg-black">
+          <Image
+            class="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110"
+            src={image}
+            width="260"
+            height="320"
+            alt={name}
+          />
+        </div>
+        
+        {/* Teks coretan kecil di bawah polaroid */}
+        <div class="mt-3 text-center font-serif text-sm italic text-white/70">
+          {name}
+        </div>
+      </div>
     </div>
   </div>
 </Section>
