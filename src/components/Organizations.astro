@@ -7,53 +7,99 @@ interface Props {
   organizations: OrganizationProps[];
 }
 
-const { organizations } = Astro.props;
+const { organizations } = Astro.props; 
 ---
 
-<Section text="Featured Organizations" href="organizations">
-  {
-    organizations.map(({ name, summary, image, linkPreview, linkSource }, index) => {
-      const top = 98 + index * 40;
-      return (
-            <div
-          style={`top: ${top}px;`}
-          class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black"
-        >
-          <div class="bg-difu relative z-1 grid h-145 w-full grid-rows-2 rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-size-[128px] before:bg-repeat before:opacity-5 before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:h-96">
-            <div class="px-6 pt-12">
-              <h3 class="mb-5 font-serif text-3xl font-medium text-primary">
-                {name}
-              </h3>
-              <p class="text-base text-neutral">{summary}</p>
-              <div class="flex gap-5 pt-10 text-white">
-                <a
-                  href={linkSource}
-                  target="_blank"
-                  class="after:relative after:-bottom-1.25 after:content-[url(/external.svg)] hover:underline"
-                >
-                  Source
-                </a>
-                <a
-                  href={linkPreview}
-                  target="_blank"
-                  class="after:relative after:-bottom-1.25 after:content-[url(/external.svg)] hover:underline"
-                >
-                  Preview
-                </a>
-              </div>
-            </div>
-            <div class="flex items-end justify-end overflow-hidden">
+<Section text="Organizational Experience" href="organizations">
+  <div class="flex flex-col gap-6">
+    {
+      /* Menambahkan tipe OrganizationProps di sini untuk menghilangkan error garis merah */
+      organizations.map((org: OrganizationProps) => {
+        const { name, period, summary, roles, image, linkPreview, linkSource } = org;
+        
+        return (
+          <div class="group relative flex flex-col items-start gap-6 rounded-2xl border border-neutral/10 bg-[#1c232d]/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-[#1c232d]/80 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] sm:flex-row sm:items-start sm:p-8">
+            
+            {/* Bagian Logo Organisasi */}
+            <div class="sticky top-24 flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-neutral/20 bg-black/50 p-3 transition-transform duration-300 group-hover:scale-105">
               <Image
-                class="h-full w-[95%] rounded-ss-xl rounded-ee-2xl object-none object-top-left sm:h-[85%] sm:w-full"
+                class="h-16 w-16 object-contain sm:h-20 sm:w-20"
                 src={image}
                 alt={name}
-                width="736"
-                height="483"
+                width="80"
+                height="80"
               />
             </div>
+
+            {/* Bagian Teks & Timeline */}
+            <div class="flex-1 mt-2">
+              
+              {/* Header Organisasi */}
+              <div class="mb-4">
+                <h3 class="font-serif text-2xl font-medium text-white transition-colors duration-300 group-hover:text-primary">
+                  {name}
+                </h3>
+                {period && (
+                  <span class="mt-1 block text-sm font-mono text-neutral/70">
+                    {period}
+                  </span>
+                )}
+              </div>
+
+              {/* SUMMARY: Sekarang akan selalu muncul di bawah Header jika datanya ada */}
+              {summary && (
+                <p class="text-base leading-relaxed text-neutral/90">
+                  {summary}
+                </p>
+              )}
+              
+              {/* TIMELINE ROLES: Muncul di bawah summary jika ada */}
+              {roles && roles.length > 0 && (
+                <div class="relative ml-2 mt-6 border-l-2 border-neutral/20 space-y-8 pb-2 pt-2">
+                  {roles.map((role: any) => (
+                    <div class="relative pl-6">
+                      {/* Titik Timeline (Dot) */}
+                      <span class="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full border-4 border-[#1c232d] bg-neutral transition-colors duration-300 group-hover:bg-primary"></span>
+                      
+                      <h4 class="text-lg font-medium text-white">{role.title}</h4>
+                      <span class="mt-1 block text-sm font-mono text-primary/80">{role.periodRole}</span>
+                      <p class="mt-3 text-sm leading-relaxed text-neutral/90">
+                        {role.description}
+                      </p>
+                      
+                      {/* Tombol Certificate Link */}
+                      {role.certificateLink && (
+                        <a href={role.certificateLink} target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-white transition-colors">
+                          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                          View Certificate
+                        </a>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Tombol Links Utama */}
+              {(linkSource || linkPreview) && (
+                <div class="mt-8 flex flex-wrap gap-4 text-sm font-medium">
+                  {linkSource && (
+                    <a href={linkSource} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-full border border-neutral/20 bg-white/5 px-5 py-2 text-neutral transition-all hover:border-primary hover:bg-primary hover:text-black">
+                      View Source
+                    </a>
+                  )}
+                  {linkPreview && (
+                    <a href={linkPreview} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-full border border-neutral/20 bg-white/5 px-5 py-2 text-neutral transition-all hover:border-primary hover:bg-primary hover:text-black">
+                      Visit Website
+                    </a>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-      );
-    })
-  }
+        );
+      })
+    }
+  </div>
 </Section>

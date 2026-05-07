@@ -46,10 +46,12 @@ export interface ProjectProps {
 
 export interface OrganizationProps {
   name: string;
+  period?: string;
   summary: string;
   image: string;
   linkPreview?: string;
   linkSource?: string;
+  roles?: {title: string; periodRole: string; description: string; certificateLink?: string}[];
 }
 
 export interface HeaderProps {

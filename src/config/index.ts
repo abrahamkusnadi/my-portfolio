@@ -76,11 +76,30 @@ Beyond writing code, I actively contribute to my campus tech community as a Back
   ],
   organizations: [
     {
-      name: "Spotifu Music",
-      summary: "A music streaming app that emulates Spotify's core features.",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/spotifu.png",
+      name: "BNCC",
+      period: "Nov 2025 - May 2026",
+      summary: "Acted as a Backend Development Mentor, guiding students in mastering server-side technologies. I developed comprehensive teaching materials and provided hands-on troubleshooting support for frameworks such as Laravel.",
+      image: "/bncc.jpg",
+    },
+    {
+      name: "HIMTI",
+      period: "May 2025 - December 2025",
+      summary: "Served as an Academic Events Staff, contributing to the end-to-end execution of various large-scale organizational events. Working closely within extensive committee structures, I developed a strong foundation in cross-functional collaboration, event logistics, and adaptive problem-solving to ensure the success of HIMTI's core programs.",
+      image: "/himti.jpg",
+      roles: [
+        {
+          title: "Registration & Fundraising Division Staff",
+          periodRole: "Aug 2025 - Oct 2025",
+          description: "Managed crucial operational aspects for the HIMTI 33rd Anniversary event. Coordinated comprehensive fundraising campaigns, led multi-channel promotional strategies to boost attendance, and oversaw a streamlined, efficient registration process for all event attendees.",
+          certificateLink: "/himti-anniv.png"
+        },
+        {
+          title: "BURAM Staff",
+          periodRole: "May 2025 - Sep 2025",
+          description: "Spearheaded promotional booth operations at the BINUS @Alam Sutera Organization Expo, successfully driving student engagement and registrations for HIMTI. Additionally, ensured seamless event execution and attendee satisfaction as an Usher during the main TECHNO 2025 event at BRIN Thamrin.",
+          certificateLink: "/himti-techno.pdf"
+        },
+      ]
     },
   ],
 };
