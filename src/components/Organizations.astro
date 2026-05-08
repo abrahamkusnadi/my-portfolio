@@ -13,15 +13,13 @@ const { organizations } = Astro.props;
 <Section text="Organizational Experience" href="organizations">
   <div class="flex flex-col gap-6">
     {
-      /* Menambahkan tipe OrganizationProps di sini untuk menghilangkan error garis merah */
       organizations.map((org: OrganizationProps) => {
         const { name, period, summary, roles, image, linkPreview, linkSource } = org;
         
         return (
           <div class="group relative flex flex-col items-start gap-6 rounded-2xl border border-neutral/10 bg-[#1c232d]/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-[#1c232d]/80 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] sm:flex-row sm:items-start sm:p-8">
             
-            {/* Bagian Logo Organisasi */}
-            <div class="sticky top-24 flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-neutral/20 bg-black/50 p-3 transition-transform duration-300 group-hover:scale-105">
+            <div class="sticky top-24 z-20 flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-neutral/20 bg-[#0d1117] p-3 transition-transform duration-300 group-hover:scale-105 sm:bg-black/50">
               <Image
                 class="h-16 w-16 object-contain sm:h-20 sm:w-20"
                 src={image}
@@ -31,10 +29,8 @@ const { organizations } = Astro.props;
               />
             </div>
 
-            {/* Bagian Teks & Timeline */}
             <div class="flex-1 mt-2">
               
-              {/* Header Organisasi */}
               <div class="mb-4">
                 <h3 class="font-serif text-2xl font-medium text-white transition-colors duration-300 group-hover:text-primary">
                   {name}
@@ -46,19 +42,16 @@ const { organizations } = Astro.props;
                 )}
               </div>
 
-              {/* SUMMARY: Sekarang akan selalu muncul di bawah Header jika datanya ada */}
               {summary && (
                 <p class="text-base leading-relaxed text-neutral/90">
                   {summary}
                 </p>
               )}
               
-              {/* TIMELINE ROLES: Muncul di bawah summary jika ada */}
               {roles && roles.length > 0 && (
                 <div class="relative ml-2 mt-6 border-l-2 border-neutral/20 space-y-8 pb-2 pt-2">
                   {roles.map((role: any) => (
                     <div class="relative pl-6">
-                      {/* Titik Timeline (Dot) */}
                       <span class="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full border-4 border-[#1c232d] bg-neutral transition-colors duration-300 group-hover:bg-primary"></span>
                       
                       <h4 class="text-lg font-medium text-white">{role.title}</h4>
@@ -67,7 +60,6 @@ const { organizations } = Astro.props;
                         {role.description}
                       </p>
                       
-                      {/* Tombol Certificate Link */}
                       {role.certificateLink && (
                         <a href={role.certificateLink} target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-white transition-colors">
                           <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -81,7 +73,6 @@ const { organizations } = Astro.props;
                 </div>
               )}
 
-              {/* Tombol Links Utama */}
               {(linkSource || linkPreview) && (
                 <div class="mt-8 flex flex-wrap gap-4 text-sm font-medium">
                   {linkSource && (
