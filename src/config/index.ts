@@ -94,10 +94,22 @@ Beyond writing code, I actively contribute to my campus tech community as a Back
           certificateLink: "/himti-anniv.png"
         },
         {
-          title: "BURAM Staff",
+          title: "BURAM Divison Staff",
           periodRole: "May 2025 - Sep 2025",
           description: "Spearheaded promotional booth operations at the BINUS @Alam Sutera Organization Expo, successfully driving student engagement and registrations for HIMTI. Additionally, ensured seamless event execution and attendee satisfaction as an Usher during the main TECHNO 2025 event at BRIN Thamrin.",
           certificateLink: "/himti-techno.pdf"
+        },
+        {
+          title: "Promotional Division Staff",
+          periodRole: "Mar 2025 - Jul 2025",
+          description: "Contributed to the promotional execution for TECHFEST 2025 by assisting in the management of the official Instagram account. Actively maintained media partner relations through consistent follow-ups, distributing essential campaign guidebooks, and ensuring smooth cross-organizational collaboration to maximize the event's digital reach.",
+          certificateLink: "/himti-techfest.png"
+        },
+        {
+          title: "Registration Staff",
+          periodRole: "Mar 2025 - May 2025",
+          description: "Managed the participant registration process for the 'Breaking into Software Engineering' seminar. Ensured a seamless check-in experience by validating attendee credentials on-site and accurately compiling post-event attendance data to support official organizational reporting.",
+          certificateLink: "/himti-seminar.jpg"
         },
       ]
     },
