@@ -53,25 +53,11 @@ Beyond writing code, I actively contribute to my campus tech community as a Back
   ],
   projects: [
     {
-      name: "Spotifu Music",
-      summary: "A music streaming app that emulates Spotify's core features.",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/spotifu.png",
-    },
-    {
-      name: "Shopp App",
-      summary: "An e-commerce platform that replicates Shopify's key features.",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/shopify-clon.png",
-    },
-    {
-      name: "ClonTagram",
-      summary: "A social network that replicates the features of Instagram",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/clone-ig.png",
+      name: "Meksiko Inc. E-Commerce",
+      summary: "A Laravel-based e-commerce app with automated invoice generation, dynamic carts, and an admin inventory dashboard.",
+      linkPreview: "https://youtu.be/2IDoOiJj0DE",
+      linkSource: "https://github.com/abrahamkusnadi/Laravel-Project-BNCC",
+      image: "/meksiko-inc.png",
     },
   ],
   organizations: [
