@@ -22,18 +22,20 @@ export const SITE_CONFIG: SiteConfig = {
 };
 
 export const SITE_CONTENT: SiteContent = {
-  hero: {
+hero: {
     name: "Abraham Kusnadi",
     specialty: "Software Engineer & Backend Developer",
     summary:
-      "Undergraduate Computer Science student specializing in server-side architecture development and data infrastructure.",
-    email: "abrahamkusnadi@gmail.com.com",
+      "Computer Science undergraduate specializing in robust server-side architecture, message brokering, and enterprise data pipelines.",
+    email: "abrahamkusnadi@gmail.com",
   },
   about: {
     description: `
-      Hi, I’m Abraham Kusnadi, a passionate Software Engineer with a primary focus on Backend Development and Database Architecture. As a Computer Science student at BINUS University, I’ve honed my skills in building scalable systems using Go, Java, and PHP (Laravel), always prioritizing performance, security, and seamless integration.
+      Hi, I’m Abraham Kusnadi, a Software Engineer with a strong focus on Backend Development and Database Architecture. As a Computer Science student at BINUS University, I specialize in building robust, scalable systems using Go, Java (Spring Boot), and PHP (Laravel). 
 
-Beyond writing code, I actively contribute to my campus tech community as a Backend Development Mentor at BNCC, guiding fellow students in mastering database concepts and backend frameworks. Whether I am orchestrating automated services, designing normalized databases, or conducting end-to-end testing, I am driven by the challenge of solving complex technical problems and delivering high-quality, reliable software solutions.
+      My recent professional experience revolves around engineering automated data pipelines—orchestrating message brokers like Kafka, managing relational databases such as PostgreSQL, and handling secure SFTP extractions. I also implement real-time log monitoring utilizing Splunk and actively collaborate within Agile workflows managed via Jira. 
+      
+      Beyond writing and testing production-ready APIs, I actively contribute to the campus tech community as a Backend Development Mentor at BNCC, guiding fellow students through complex database management and server-side concepts. Whether I am building asynchronous tracking services, optimizing data workflows, or designing normalized 3NF databases, I am driven by the challenge of solving complex technical problems and delivering high-performance software solutions.
     `,
     image: "/abraham-kusnadi-big.png",
   },
@@ -49,7 +51,18 @@ Beyond writing code, I actively contribute to my campus tech community as a Back
         "Authored comprehensive unit tests to verify complex backend logic, minimize production bugs, and maintain a high standard of code reliability throughout the development lifecycle.",
         "Actively collaborated with senior consultants and developers in rigorous code reviews and quality assurance processes, adhering to industry best practices in software architecture."
       ],
-    }
+    },
+    {
+      company: "DingTalk",
+      position: "AI Data Collection Coordinator",
+      startDate: "March 2026",
+      endDate: "April 2026",
+      summary: [
+        "Coordinated a team of Indonesian native speakers, tracking their progress and submission statuses for an AI voice recording project.",
+        "Facilitated seamless project execution by ensuring all team members fully understood the data collection workflows and providing administrative support.",
+        "Localized English project guidelines into Indonesian and developed step-by-step visual documentation to ensure clear communication of tasks."
+      ],
+    },
   ],
   projects: [
     {
@@ -59,11 +72,25 @@ Beyond writing code, I actively contribute to my campus tech community as a Back
       linkSource: "https://github.com/abrahamkusnadi/Laravel-Project-BNCC",
       image: "/meksiko-inc.png",
     },
+    {
+      name: "Spotify Big Data Clustering",
+      summary: "A Python-based music data analysis and K-Means clustering group project.",
+      linkPreview: "https://colab.research.google.com/drive/1qvrL5DYlZyjgTJGk6fzyDBUT-WyVNguL",
+      linkSource: "https://github.com/abrahamkusnadi/Big-Data-Processing-Project", // Ubah jika kamu menaruh file .ipynb ini di GitHub kamu
+      image: "/spotify-clustering.png",
+    },
+    {
+      name: "Invoice DB Management",
+      summary: "Relational database design project involving data scraping, functional dependency mapping, and 3NF normalization in MySQL.",
+      linkPreview: "https://colab.research.google.com/drive/1ueCsh1yNBIWdA37O8HCCYL88tajPyHcP?usp=sharing", 
+      linkSource: "https://github.com/immois/database-design-invoice", 
+      image: "/db-design.png", 
+    },
   ],
   organizations: [
     {
       name: "BNCC",
-      period: "Nov 2025 - May 2026",
+      period: "Nov 2025 - Present",
       summary: "Acted as a Backend Development Mentor, guiding students in mastering server-side technologies. I developed comprehensive teaching materials and provided hands-on troubleshooting support for frameworks such as Laravel.",
       image: "/bncc.jpg",
     },
