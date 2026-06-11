@@ -2,7 +2,9 @@
 
 A minimalist, fast, and responsive personal portfolio website showcasing my journey, projects, and skills as a Software Engineer and Backend Developer. This site serves as a digital resume and a central hub for my selected best works, ranging from robust backend architectures to mobile applications and data science projects.
 
-🌍 **Live Website:** [abrahamkusnadi.vercel.app](https://abrahamkusnadi.vercel.app) 
+🌍 **Live Website:** [abrahamkusnadi.vercel.app](https://abrahamkusnadi.vercel.app)
+💼 **LinkedIn:** [LinkedIn](https://www.linkedin.com/in/abrahamkusnadi/)
+📫 **Contact:** [Email](https://abrahamkusnadi@gmail.com)
 
 ---
 
@@ -26,7 +28,7 @@ If you'd like to explore the source code or run this project on your local machi
 1. Clone this repository:
    ```bash
    git clone [https://github.com/abrahamkusnadi/my-portfolio.git](https://github.com/abrahamkusnadi/my-portfolio.git)
-   cd nama-repo-portofolio-kamu
+   cd my-portfolio
    ```
 2. Install the dependencies:
    ```bash
