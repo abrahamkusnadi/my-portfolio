@@ -1,35 +1,40 @@
-# AstroZen - Personal Portfolio Website
+# 🚀 Ignatius Abraham Aristio Kusnadi - Personal Portfolio
 
-AstroZen is a minimalist, accessible and responsive portfolio template for your personal portfolio website. It is built with Astro and TailwindCSS.
+A minimalist, fast, and responsive personal portfolio website showcasing my journey, projects, and skills as a Software Engineer and Backend Developer. This site serves as a digital resume and a central hub for my selected best works, ranging from robust backend architectures to mobile applications and data science projects.
 
-![zen-og](https://github.com/user-attachments/assets/7a72aaae-6652-4cd0-becc-8e6a3c224993)
+🌍 **Live Website:** [abrahamkusnadi.vercel.app](https://abrahamkusnadi.vercel.app) 
 
-> [!NOTE]
-> The information contained in this template, including names, images, and content, is entirely fictitious and is intended solely to give the design a realistic appearance. Any coincidence with real-life people, events, or situations is purely coincidental. It is recommended that you replace this information with your own information.
+---
 
-## 🔥 Features
+## ✨ About This Site
 
-- [x] Minimalist design. clean and simple
-- [x] Mobile-first responsive layout
-- [x] SEO-friendly and accessible
-- [x] Easy to customize with a single configuration file
+This portfolio is designed to be clean, accessible, and strictly focused on content. It highlights my core technical competencies, educational background in Computer Science, and the impact I've made across various individual and group projects.
 
-## ✅ Lighthouse Score
+### 🛠️ Built With
 
-![performance](https://github.com/user-attachments/assets/4f95e2ca-03f9-4996-9e34-dcd179194c58)
+* **Framework:** [Astro](https://astro.build/) - For shipping zero JavaScript by default and maximizing performance.
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/) - For a highly customizable and mobile-first responsive layout.
+* **Deployment:** [Vercel](https://vercel.com/) - For seamless continuous integration and global edge hosting.
+* **Template Base:** [AstroZen](https://github.com/immois/astro-zen)
 
-## 🚀 Getting Started
+---
 
-Clone this repository to your local machine using Git.
+## ⚙️ Running Locally
 
-```scheme
-git clone https://github.com/immois/astro-zen.git
-cd astro-zen
-```
+If you'd like to explore the source code or run this project on your local machine, follow these steps:
 
-| Command        | Action                                       |
-| :------------- | :------------------------------------------- |
-| `pnpm install` | Installs dependencies                        |
-| `pnpm dev`     | Starts local dev server at `localhost:4321`  |
-| `pnpm build`   | Build your production site to `./dist/`      |
-| `pnpm preview` | Preview your build locally, before deploying |
+1. Clone this repository:
+   ```bash
+   git clone [https://github.com/abrahamkusnadi/my-portfolio.git](https://github.com/abrahamkusnadi/my-portfolio.git)
+   cd nama-repo-portofolio-kamu
+   ```
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the local development server:
+   ```
+   npm run dev
+   ```
+4. Open your browser and navigate to http://localhost:4321.
+   
