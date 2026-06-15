@@ -73,10 +73,17 @@ hero: {
       image: "/meksiko-inc.png",
     },
     {
+      name: "BLATE",
+      summary: "An Android dating application prototype built to simulate dating apps and chat interfaces.",
+      linkPreview: "https://github.com/abrahamkusnadi/BLATE",
+      linkSource: "https://github.com/abrahamkusnadi/BLATE",
+      image: "/blate.png",
+    },
+    {
       name: "Spotify Big Data Clustering",
       summary: "A Python-based music data analysis and K-Means clustering group project.",
       linkPreview: "https://colab.research.google.com/drive/1qvrL5DYlZyjgTJGk6fzyDBUT-WyVNguL",
-      linkSource: "https://github.com/abrahamkusnadi/Big-Data-Processing-Project", // Ubah jika kamu menaruh file .ipynb ini di GitHub kamu
+      linkSource: "https://github.com/abrahamkusnadi/Big-Data-Processing-Project",
       image: "/spotify-clustering.png",
     },
     {
@@ -128,5 +135,3 @@ hero: {
     },
   ],
 };
-
-// #5755ff
