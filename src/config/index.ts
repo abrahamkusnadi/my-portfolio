@@ -68,14 +68,14 @@ hero: {
     {
       name: "Meksiko Inc. E-Commerce",
       summary: "A Laravel-based e-commerce app with automated invoice generation, dynamic carts, and an admin inventory dashboard.",
-      linkPreview: "https://youtu.be/2IDoOiJj0DE",
+      linkPreview: "https://drive.google.com/file/d/1kh5jXmFl5Q5U1Gq7Sj5vnzMQIjUS74jC/view?usp=sharing",
       linkSource: "https://github.com/abrahamkusnadi/Laravel-Project-BNCC",
       image: "/meksiko-inc.png",
     },
     {
       name: "BLATE",
       summary: "An Android dating application prototype built to simulate dating apps and chat interfaces.",
-      linkPreview: "https://github.com/abrahamkusnadi/BLATE",
+      linkPreview: "https://drive.google.com/file/d/1zaA6W1q2bLhtbFJaknPIcQO5hGg71Q_z/view?usp=sharing",
       linkSource: "https://github.com/abrahamkusnadi/BLATE",
       image: "/blate.png",
     },
