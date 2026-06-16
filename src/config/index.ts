@@ -14,7 +14,7 @@ export const SITE_CONFIG: SiteConfig = {
     { text: "Organization", href: "#organizations" },
   ],
   socialLinks: [
-    { text: "LinkedIn", href: "https://www.linkedin.com/in/abraham-kusnadi" },
+    { text: "LinkedIn", href: "https://www.linkedin.com/in/abrahamkusnadi" },
     { text: "Github", href: "https://github.com/abrahamkusnadi" },
   ],
   socialImage: "/zen-og.png",
