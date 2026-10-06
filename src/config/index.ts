@@ -97,9 +97,10 @@ hero: {
   organizations: [
     {
       name: "BNCC",
-      period: "Nov 2025 - Present",
+      period: "Nov 2025 - May 2026",
       summary: "Acted as a Backend Development Mentor, guiding students in mastering server-side technologies. I developed comprehensive teaching materials and provided hands-on troubleshooting support for frameworks such as Laravel.",
       image: "/bncc.jpg",
+      linkSource: "/bncc-praetorian-1.pdf"
     },
     {
       name: "HIMTI",
