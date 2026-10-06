@@ -14,7 +14,7 @@ export const SITE_CONFIG: SiteConfig = {
     { text: "Organization", href: "#organizations" },
   ],
   socialLinks: [
-    { text: "LinkedIn", href: "https://www.linkedin.com/in/abraham-kusnadi" },
+    { text: "LinkedIn", href: "https://www.linkedin.com/in/abrahamkusnadi" },
     { text: "Github", href: "https://github.com/abrahamkusnadi" },
   ],
   socialImage: "/zen-og.png",
@@ -75,7 +75,7 @@ hero: {
     {
       name: "BLATE",
       summary: "An Android dating application prototype built to simulate dating apps and chat interfaces.",
-      linkPreview: "https://drive.google.com/file/d/1zaA6W1q2bLhtbFJaknPIcQO5hGg71Q_z/view?usp=sharing",
+      linkPreview: "https://drive.google.com/file/d/10IB-Ztz2KGmGbyY0KH-vW5RJC8N4VJKV/view?usp=sharing",
       linkSource: "https://github.com/abrahamkusnadi/BLATE",
       image: "/blate.png",
     },
@@ -90,7 +90,7 @@ hero: {
       name: "Invoice DB Management",
       summary: "Relational database design project involving data scraping, functional dependency mapping, and 3NF normalization in MySQL.",
       linkPreview: "https://colab.research.google.com/drive/1ueCsh1yNBIWdA37O8HCCYL88tajPyHcP?usp=sharing", 
-      linkSource: "https://github.com/immois/database-design-invoice", 
+      linkSource: "https://github.com/abrahamkusnadi/Database-Design-Project", 
       image: "/db-design.png", 
     },
   ],
