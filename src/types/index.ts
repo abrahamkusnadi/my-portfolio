@@ -8,24 +8,34 @@ export interface SiteConfig extends HeaderProps {
   canonicalURL?: string;
 }
 
+export interface SkillCategory {
+  title: string;
+  badgeColor?: string;
+  items: string[];
+}
+
 export interface SiteContent {
   hero: HeroProps;
+  about: AboutProps;
+  skills: SkillCategory[];
   experience: ExperienceProps[];
   projects: ProjectProps[];
   organizations: OrganizationProps[];
-  about: AboutProps;
 }
 
 export interface HeroProps {
   name: string;
+  tagline: string;
   specialty: string;
   summary: string;
   email: string;
+  resumeUrl?: string;
 }
 
 export interface AboutProps {
-  description: string;
+  description: string[];
   image: string;
+  highlights?: string[];
 }
 
 export interface ExperienceProps {
@@ -40,8 +50,16 @@ export interface ProjectProps {
   name: string;
   summary: string;
   image: string;
+  tags?: string[];
   linkPreview?: string;
   linkSource?: string;
+}
+
+export interface OrganizationRole {
+  title: string;
+  periodRole: string;
+  description: string;
+  certificateLink?: string;
 }
 
 export interface OrganizationProps {
@@ -51,7 +69,7 @@ export interface OrganizationProps {
   image: string;
   linkPreview?: string;
   linkSource?: string;
-  roles?: {title: string; periodRole: string; description: string; certificateLink?: string}[];
+  roles?: OrganizationRole[];
 }
 
 export interface HeaderProps {

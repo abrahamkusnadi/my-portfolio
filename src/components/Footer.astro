@@ -7,25 +7,59 @@ const { author, socialLinks } = Astro.props;
 const currentYear = new Date().getFullYear();
 ---
 
-<footer
-  class="w-full border-t border-neutral/20 px-5 pt-5 pb-8 text-center text-white"
->
-  <ul class="mb-5 flex flex-wrap justify-center gap-x-5 text-xs">
-    {
-      socialLinks.map(({ text, href }) => (
-        <li>
-          <a
-            href={href}
-            target="_blank"
-            class="inline-block px-4 py-3 after:relative after:-bottom-1 after:content-[url(/external.svg)] hover:text-primary"
-          >
-            {text}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-  <p class="text-xs">
-    {author} © {currentYear}. All rights reserved.
-  </p>
+<footer class="mt-20 border-t-2 border-black bg-white">
+  <!-- Pre-footer CTA banner -->
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12">
+    <div class="neo-card !bg-[#2563EB] text-white p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[5px_5px_0px_#000]">
+      <div>
+        <span class="inline-block font-mono text-xs font-bold uppercase bg-[#FDE047] text-black px-2.5 py-1 border border-black shadow-[1.5px_1.5px_0px_#000] mb-3">
+          GET IN TOUCH
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-black uppercase tracking-tight !text-white">
+          LET'S BUILD SOMETHING SCALABLE TOGETHER.
+        </h2>
+        <p class="font-sans !text-blue-100 text-sm sm:text-base mt-2 max-w-xl">
+          Open for backend engineering roles, database optimization, and high-performance server architecture inquiries.
+        </p>
+      </div>
+
+      <a
+        href="mailto:abrahamkusnadi@gmail.com"
+        class="neo-btn bg-[#A3E635] text-black hover:bg-[#86efac] text-sm sm:text-base py-3 px-6 whitespace-nowrap shadow-[3px_3px_0px_#000]"
+      >
+        <span>CONTACT ME</span>
+        <span>&rarr;</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t-2 border-black bg-gray-50 py-6 px-4 sm:px-6">
+    <div class="mx-auto max-w-5xl flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs">
+      <div class="flex items-center gap-2">
+        <span class="px-2 py-0.5 bg-[#A3E635] font-bold border border-black shadow-[1px_1px_0px_#000]">&lt;/&gt; ABRAHAM.DEV</span>
+      </div>
+
+      <p class="text-gray-600 text-center">
+        &copy; {currentYear} {author}. Built with Astro &amp; Neo-Brutalism.
+      </p>
+
+      <ul class="flex items-center gap-3">
+        {
+          socialLinks.map(({ text, href }) => (
+            <li>
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-[#2563EB] font-bold underline transition-colors"
+              >
+                {text}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
 </footer>

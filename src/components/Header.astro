@@ -8,55 +8,72 @@ type Props = HeaderProps;
 const { siteLogo, navLinks } = Astro.props;
 ---
 
-<header
-  class="sticky top-0 z-50 mx-auto flex max-w-5xl animate-slide-in justify-between bg-black px-5 py-6"
->
-  <a href="/" aria-label="Home link">
-    <Image
-      class="rounded-full"
-      src={siteLogo}
-      width="45"
-      height="45"
-      alt="website logo"
-    />
-  </a>
+<header class="sticky top-4 z-50 mx-auto max-w-5xl px-4 sm:px-6">
+  <div class="neo-card bg-white px-4 py-2.5 sm:px-6 sm:py-3 flex items-center justify-between">
+    <!-- Brand / Logo -->
+    <a href="/" class="flex items-center gap-3 group" aria-label="Home">
+      <div class="h-9 w-9 overflow-hidden rounded border-2 border-black bg-yellow-300">
+        <Image
+          class="h-full w-full object-cover transition-transform group-hover:scale-110"
+          src={siteLogo}
+          width="40"
+          height="40"
+          alt="Abraham Kusnadi logo"
+        />
+      </div>
+      <div class="flex items-center gap-1.5 font-mono text-xs sm:text-sm font-bold bg-[#A3E635] px-2.5 py-1 border-2 border-black shadow-[2px_2px_0px_#000]">
+        <span>&lt;/&gt;</span>
+        <span class="tracking-wider">ABRAHAM.DEV</span>
+      </div>
+    </a>
 
-  <button
-    type="button"
-    id="menu-button"
-    class="px-1.5 text-neutral sm:hidden"
-    aria-expanded="false"
-    aria-controls="main-menu"
-  >
-    <Menu />
-  </button>
+    <!-- Mobile menu toggle -->
+    <button
+      type="button"
+      id="menu-button"
+      class="p-2 border-2 border-black bg-white shadow-[2px_2px_0px_#000] md:hidden cursor-pointer"
+      aria-expanded="false"
+      aria-controls="main-menu"
+      aria-label="Toggle navigation menu"
+    >
+      <Menu />
+    </button>
 
-  <nav
-    class="absolute top-20 right-5 hidden rounded-xl border border-neutral/40 bg-black px-4 py-5 text-neutral sm:static sm:block sm:border-0 sm:bg-transparent sm:p-0"
-    id="main-menu"
-  >
-    <ul class="gap-2 sm:flex">
-      {
-        navLinks.map((link) => (
-          <li class="relative">
-            <a
-              class={`nav-item relative block p-2 text-sm font-medium transition-all duration-500 after:absolute after:bottom-0 after:left-2/4 after:h-2 after:w-1 after:-translate-x-2/4 after:text-primary after:opacity-0 after:content-['•'] hover:text-white`}
-              href={link.href}
-            >
-              {link.text}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </nav>
+    <!-- Nav Links Desktop -->
+    <nav
+      id="main-menu"
+      class="hidden absolute top-16 right-4 left-4 md:static md:block md:w-auto neo-card md:shadow-none md:border-0 bg-white md:bg-transparent p-4 md:p-0 z-50"
+    >
+      <ul class="flex flex-col md:flex-row items-center gap-2 md:gap-1 lg:gap-2 font-mono text-xs font-bold uppercase tracking-wider">
+        {
+          navLinks.map((link) => (
+            <li class="w-full md:w-auto text-center">
+              <a
+                class="block w-full px-3 py-1.5 transition-colors border-2 border-transparent hover:border-black hover:bg-[#FDE047] hover:shadow-[2px_2px_0px_#000]"
+                href={link.href}
+              >
+                {link.text}
+              </a>
+            </li>
+          ))
+        }
+        <li class="w-full md:w-auto mt-2 md:mt-0">
+          <a
+            href="mailto:abrahamkusnadi@gmail.com"
+            class="neo-btn bg-[#2563EB] text-white hover:bg-[#1D4ED8] text-xs py-1.5 px-3.5"
+          >
+            CONTACT ME &rarr;
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <script>
-  // Toggle mobile menu
   const button = document.querySelector("#menu-button");
   const menu = document.querySelector("#main-menu");
-  const navItems = document.querySelectorAll("#main-menu > ul > li > a");
+  const navItems = document.querySelectorAll("#main-menu a");
 
   const toggleMenu = () => {
     menu?.classList.toggle("hidden");
@@ -66,46 +83,11 @@ const { siteLogo, navLinks } = Astro.props;
 
   button?.addEventListener("click", toggleMenu);
   navItems.forEach((item) => {
-    item?.addEventListener("click", toggleMenu);
+    item.addEventListener("click", () => {
+      if (window.innerWidth < 768) {
+        menu?.classList.add("hidden");
+        button?.setAttribute("aria-expanded", "false");
+      }
+    });
   });
-
-  // Update navigation based on scroll position with Intersection Observer
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navItems.forEach((item) => {
-            if (item.getAttribute("href") === `#${entry.target.id}`) {
-              item.classList.add("text-white", "md:after:opacity-100");
-            } else {
-              item.classList.remove("text-white", "md:after:opacity-100");
-            }
-          });
-        }
-      });
-    },
-    { threshold: 0.15 },
-  );
-
-  document.querySelectorAll("section").forEach((section) => {
-    observer.observe(section);
-  });
-
-  // Cleanup observer
-  document.onvisibilitychange = () => {
-    if (document.visibilityState === "hidden") {
-      observer.disconnect();
-    } else {
-      document.querySelectorAll("section").forEach((section) => {
-        observer.observe(section);
-      });
-    }
-  };
 </script>
-
-<style>
-  header {
-    animation-timeline: scroll();
-    animation-range: 0 650px;
-  }
-</style>

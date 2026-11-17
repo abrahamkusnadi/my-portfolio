@@ -5,49 +5,81 @@ import type { AboutProps, HeroProps } from "@types";
 
 type Props = AboutProps & Pick<HeroProps, "name">;
 
-const { description, image, name } = Astro.props;
+const { description, image, name, highlights } = Astro.props;
 ---
 
-<Section text="About Me" href="about">
-  <div class="flex flex-col-reverse items-center gap-12 md:flex-row md:items-start md:gap-16">
-    <div class="flex-1 space-y-6">
-      <p class="text-base leading-relaxed text-neutral/90 md:text-lg text-justify sm:text-left">
-        {description}
-      </p>
+<Section text="About Me" href="about" badge="// ABOUT">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+    <!-- Left Narrative Content -->
+    <div class="lg:col-span-8 neo-card p-6 sm:p-8 bg-white flex flex-col justify-between space-y-6">
+      <div class="space-y-4">
+        {
+          Array.isArray(description) ? (
+            description.map((paragraph) => (
+              <p class="text-sm sm:text-base leading-relaxed text-gray-800 text-justify sm:text-left font-sans">
+                {paragraph}
+              </p>
+            ))
+          ) : (
+            <p class="text-sm sm:text-base leading-relaxed text-gray-800 text-justify sm:text-left font-sans">
+              {description}
+            </p>
+          )
+        }
+      </div>
 
-      <div class="flex flex-wrap gap-3 pt-2 font-mono text-xs sm:text-sm">
-        <span class="rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-primary transition-colors hover:bg-primary/20">Backend Architecture</span>
-        <span class="rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-primary transition-colors hover:bg-primary/20">Data Pipelines</span>
-        <span class="rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-primary transition-colors hover:bg-primary/20">Database Modeling</span>
-        <span class="rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-primary transition-colors hover:bg-primary/20">RESTful APIs</span>
-        <span class="rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-primary transition-colors hover:bg-primary/20">Tech Mentorship</span>
+      <!-- Highlights / Focus Areas -->
+      <div>
+        <h3 class="font-mono text-xs font-bold uppercase tracking-wider text-gray-500 mb-3">
+          CORE FOCUS &amp; COMPETENCIES:
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          {
+            highlights?.map((item) => (
+              <span class="neo-badge bg-[#FDE047] text-black">
+                {item}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Quick Bio Meta Strip -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4 border-t-2 border-black border-dashed font-mono text-xs">
+        <div>
+          <span class="block text-gray-500 text-[11px]">LOCATION</span>
+          <span class="font-bold text-black">Jakarta, ID</span>
+        </div>
+        <div>
+          <span class="block text-gray-500 text-[11px]">EDUCATION</span>
+          <span class="font-bold text-black">BINUS University</span>
+        </div>
+        <div class="col-span-2 sm:col-span-1">
+          <span class="block text-gray-500 text-[11px]">STATUS</span>
+          <span class="font-bold text-[#2563EB]">Undergraduate &amp; Intern</span>
+        </div>
       </div>
     </div>
 
-    <div class="group relative shrink-0">
-      <div tabindex="0" class="group relative shrink-0 cursor-pointer outline-none">
-        <div class="absolute -inset-1 rounded-xl bg-gradient-to-tr from-primary/40 to-purple-500/40 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100 group-focus:opacity-100 group-active:opacity-100"></div>
-        <div class="relative h-80 w-64 rotate-[4deg] rounded-lg bg-white p-3 shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-500 group-hover:rotate-0 group-hover:scale-105 group-hover:shadow-2xl group-focus:rotate-0 group-focus:scale-105 group-active:rotate-0 group-active:scale-105 md:rotate-[6deg]">
-          <div class="absolute -top-3 left-1/2 z-10 h-6 w-20 -translate-x-1/2 -rotate-2 rounded-sm bg-white/60 shadow-sm backdrop-blur-md"></div>
-          <div class="absolute -right-4 top-8 z-20 animate-bounce rounded-full border border-neutral/20 bg-black/80 px-3 py-1 text-xs font-medium text-white shadow-lg backdrop-blur-md transition-all duration-300 group-hover:pointer-events-none group-hover:opacity-0 group-focus:opacity-0 group-active:opacity-0">
-            <span class="sm:hidden">Tap me ✨</span>
-            <span class="hidden sm:block">Hover me ✨</span>
-          </div>
+    <!-- Right Profile / Sticker Card -->
+    <div class="lg:col-span-4 flex justify-center">
+      <div class="neo-card bg-[#F4F5F7] p-3 max-w-[280px] w-full rotate-1 hover:rotate-0 transition-transform duration-200">
+        <!-- Top Tape Decor -->
+        <div class="w-16 h-4 bg-yellow-200/90 border border-black/30 mx-auto -mt-5 mb-2 shadow-sm"></div>
 
+        <div class="border-2 border-black overflow-hidden bg-white">
+          <Image
+            class="w-full h-72 object-cover object-top"
+            src={image}
+            width={280}
+            height={320}
+            alt={name}
+          />
+        </div>
 
-          <div class="h-full w-full overflow-hidden rounded bg-black">
-            <Image
-              class="h-full w-full object-cover grayscale transition-all duration-500 group-hover:scale-110 group-hover:grayscale-0 group-focus:scale-110 group-focus:grayscale-0 group-active:scale-110 group-active:grayscale-0"
-              src={image}
-              width="260"
-              height="320"
-              alt={name}
-            />
-          </div>
-        
-          <div class="mt-3 text-center font-serif text-sm italic text-white/70">
-            {name}
-          </div>
+        <div class="mt-3 text-center">
+          <p class="font-serif font-black text-sm uppercase text-black">{name}</p>
+          <p class="font-mono text-[11px] text-[#2563EB] font-bold">Backend Developer &amp; Mentor</p>
         </div>
       </div>
     </div>

@@ -7,87 +7,113 @@ interface Props {
   organizations: OrganizationProps[];
 }
 
-const { organizations } = Astro.props; 
+const { organizations } = Astro.props;
 ---
 
-<Section text="Organizational Experience" href="organizations">
-  <div class="flex flex-col gap-6">
+<Section text="Organizational Experience" href="organizations" badge="// COMMUNITY">
+  <div class="space-y-8">
     {
       organizations.map((org: OrganizationProps) => {
         const { name, period, summary, roles, image, linkPreview, linkSource } = org;
-        
-        return (
-          <div class="group relative flex flex-col items-start gap-6 rounded-2xl border border-neutral/10 bg-[#1c232d]/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-[#1c232d]/80 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] sm:flex-row sm:items-start sm:p-8">
-            
-            <div class="sticky top-24 z-20 flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-neutral/20 bg-[#0d1117] p-3 transition-transform duration-300 group-hover:scale-105 sm:bg-black/50">
-              <Image
-                class="h-16 w-16 object-contain sm:h-20 sm:w-20"
-                src={image}
-                alt={name}
-                width="80"
-                height="80"
-              />
-            </div>
 
-            <div class="flex-1 mt-2">
-              
-              <div class="mb-4">
-                <h3 class="font-serif text-2xl font-medium text-white transition-colors duration-300 group-hover:text-primary">
-                  {name}
-                </h3>
-                {period && (
-                  <span class="mt-1 block text-sm font-mono text-neutral/70">
-                    {period}
-                  </span>
-                )}
+        return (
+          <div class="neo-card bg-white p-6 sm:p-8">
+            <!-- Org Header -->
+            <div class="flex flex-col sm:flex-row sm:items-start gap-5 pb-6 border-b-2 border-black border-dashed">
+              <div class="h-16 w-16 sm:h-20 sm:w-20 shrink-0 border-2 border-black bg-gray-50 p-2 shadow-[2px_2px_0px_#000] overflow-hidden flex items-center justify-center">
+                <Image
+                  class="h-full w-full object-contain"
+                  src={image}
+                  alt={name}
+                  width={80}
+                  height={80}
+                />
               </div>
 
-              {summary && (
-                <p class="text-base leading-relaxed text-neutral/90">
+              <div class="flex-1">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                  <h3 class="font-serif text-2xl font-black uppercase text-black">
+                    {name}
+                  </h3>
+                  {period && (
+                    <span class="font-mono text-xs font-bold bg-[#FDE047] text-black px-2.5 py-1 border border-black shadow-[1.5px_1.5px_0px_#000]">
+                      {period}
+                    </span>
+                  )}
+                </div>
+                <p class="text-sm sm:text-base text-gray-700 leading-relaxed font-sans">
                   {summary}
                 </p>
-              )}
-              
-              {roles && roles.length > 0 && (
-                <div class="relative ml-2 mt-6 border-l-2 border-neutral/20 space-y-8 pb-2 pt-2">
-                  {roles.map((role: any) => (
-                    <div class="relative pl-6">
-                      <span class="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full border-4 border-[#1c232d] bg-neutral transition-colors duration-300 group-hover:bg-primary"></span>
-                      
-                      <h4 class="text-lg font-medium text-white">{role.title}</h4>
-                      <span class="mt-1 block text-sm font-mono text-primary/80">{role.periodRole}</span>
-                      <p class="mt-3 text-sm leading-relaxed text-neutral/90">
-                        {role.description}
-                      </p>
-                      
+              </div>
+            </div>
+
+            <!-- Sub-roles / Initiatives -->
+            {roles && roles.length > 0 && (
+              <div class="mt-6 space-y-5">
+                <h4 class="font-mono text-xs font-bold uppercase text-gray-500 tracking-wider">
+                  ROLES &amp; CONTRIBUTIONS:
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {roles.map((role) => (
+                    <div class={`p-4 border-2 border-black bg-gray-50/60 shadow-[2px_2px_0px_#000] flex flex-col justify-between ${roles.length === 1 ? "md:col-span-2" : ""}`}>
+                      <div>
+                        <div class="flex items-start justify-between gap-2 mb-1.5">
+                          <h5 class="font-serif text-base font-bold text-black leading-snug">
+                            {role.title}
+                          </h5>
+                        </div>
+                        <span class="inline-block font-mono text-[11px] font-bold text-[#2563EB] mb-2.5">
+                          {role.periodRole}
+                        </span>
+                        <p class="text-xs sm:text-sm text-gray-700 leading-relaxed font-sans">
+                          {role.description}
+                        </p>
+                      </div>
+
                       {role.certificateLink && (
-                        <a href={role.certificateLink} target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-white transition-colors">
-                          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                          </svg>
-                          View Certificate
-                        </a>
+                        <div class="mt-3 pt-3 border-t border-black/10">
+                          <a
+                            href={role.certificateLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-black hover:text-[#2563EB] transition-colors"
+                          >
+                            <span>VIEW CERTIFICATE</span>
+                            <span>&nearr;</span>
+                          </a>
+                        </div>
                       )}
                     </div>
                   ))}
                 </div>
-              )}
+              </div>
+            )}
 
-              {(linkSource || linkPreview) && (
-                <div class="mt-8 flex flex-wrap gap-4 text-sm font-medium">
-                  {linkSource && (
-                    <a href={linkSource} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-full border border-neutral/20 bg-white/5 px-5 py-2 text-neutral transition-all hover:border-primary hover:bg-primary hover:text-black">
-                      View Source
-                    </a>
-                  )}
-                  {linkPreview && (
-                    <a href={linkPreview} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-full border border-neutral/20 bg-white/5 px-5 py-2 text-neutral transition-all hover:border-primary hover:bg-primary hover:text-black">
-                      Visit Website
-                    </a>
-                  )}
-                </div>
-              )}
-            </div>
+            <!-- Org Links if available -->
+            {(linkSource || linkPreview) && (
+              <div class="mt-6 pt-4 border-t-2 border-dashed border-gray-200 flex flex-wrap gap-3">
+                {linkSource && (
+                  <a
+                    href={linkSource}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="neo-btn bg-white text-black hover:bg-gray-100 text-xs py-1.5 px-3"
+                  >
+                    View Source &nearr;
+                  </a>
+                )}
+                {linkPreview && (
+                  <a
+                    href={linkPreview}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="neo-btn bg-[#A3E635] text-black hover:bg-[#86efac] text-xs py-1.5 px-3"
+                  >
+                    Visit Website &nearr;
+                  </a>
+                )}
+              </div>
+            )}
           </div>
         );
       })
