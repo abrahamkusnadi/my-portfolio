@@ -70,9 +70,11 @@ export const SITE_CONTENT: SiteContent = {
       badgeColor: "#F59E0B",
       items: [
         "Apache Kafka",
-        "GitLab & GitHub",
+        "GitLab CI/CD",
         "Docker",
         "Splunk",
+        "Sonarqube",
+        "Jenkins"
       ],
     },
     {
@@ -102,13 +104,14 @@ export const SITE_CONTENT: SiteContent = {
         "PlantUML",
       ],
     },
-        {
+    {
       title: "Testing & QA",
       badgeColor: "#06B6D4",
       items: [
         "JUnit (Unit Testing)",
         "Postman (API Testing)",
         "Wiremock (API Simulation)",
+        "Cypress (E2E Testing)"
       ],
     },
   ],
@@ -120,7 +123,7 @@ export const SITE_CONTENT: SiteContent = {
       endDate: "Present",
       summary: [
         "Engineered enterprise microservices using Go (Gin) and Java Spring Boot (WebFlux/R2DBC) alongside asynchronous automated SFTP extraction services for blasting billing report from Splunk",
-        "Managed SSL/TLS certificates and Java keystores/truststores, and deployed WireMock API simulators to ensure reliable service integrations.",
+        "Configured GitLab CI/CD pre-production & to-be-production deployment pipelines, managed SSL/TLS certificates and Java keystores/truststores, and deployed WireMock API simulators to ensure reliable service integrations.",
         "Enforced strict RESTful API input validation, authored comprehensive JUnit test suites, and monitored production workflows via Splunk to minimize regression risks.",
         "Developed interactive web portals using React and Next.js to support real-time ETL pipeline monitoring and data reconciliation.",
       ],
@@ -196,7 +199,7 @@ export const SITE_CONTENT: SiteContent = {
       name: "Himpunan Mahasiswa Teknik Informatika (HIMTI)",
       period: "Mar 2025 - Oct 2025",
       summary:
-        "Active member of the academic events committee, contributing to large-scale technological symposiums, public relations, and operational event logistics.",
+        "Active member of the academic events committee, contributing to large-scale technological seminars, public relations, and operational event logistics.",
       image: "/himti.jpg",
       roles: [
         {
