@@ -50,7 +50,7 @@ The site adopts a bold **Neo-Brutalist** aesthetic combined with high-performanc
 
 ## 🛠️ Tech Stack
 
-- **Core Framework:** [Astro v7](https://astro.build/) (Island Architecture, static site generation, ultra-fast initial page load)
+- **Core Framework:** [Astro v6](https://astro.build/) (Island Architecture, static site generation, ultra-fast initial page load)
 - **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) (integrated via `@tailwindcss/vite` with custom theme tokens)
 - **Language:** [TypeScript](https://www.typescriptlang.org/) (strict type definitions for all section props and configuration schemas)
 - **Hosting & Analytics:** [Vercel](https://vercel.com/) with `@vercel/analytics`
