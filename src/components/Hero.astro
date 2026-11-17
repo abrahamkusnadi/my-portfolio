@@ -1,27 +1,178 @@
 ---
 import type { HeroProps } from "@types";
+
 type Props = HeroProps;
 
-const { name, specialty, summary, email } = Astro.props;
+const { name, specialty, summary, email, tagline } = Astro.props;
 ---
 
-<section class="py-24 md:py-32" id="#hero">
-  <h1
-    class="mb-1.5 font-serif text-7xl font-bold tracking-tightest text-white sm:text-8xl md:mb-0 md:text-9xl"
-  >
-    {name}
-  </h1>
-  <p
-    class="mb-9 font-serif text-4xl leading-11.5 font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl"
-  >
-    {specialty}
-  </p>
-  <p class="mb-16 text-base font-normal text-neutral md:text-lg">
-    {summary}
-  </p>
+<section id="hero" class="pt-6 sm:pt-10">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+    <!-- Left Hero Content -->
+    <div class="lg:col-span-7 neo-card p-6 sm:p-8 flex flex-col justify-between bg-white relative overflow-hidden">
+      <!-- Decorative background accent -->
+      <div class="absolute -right-12 -top-12 w-32 h-32 bg-[#2563EB]/10 rounded-full blur-2xl pointer-events-none"></div>
 
-  <a
-    class="inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-[#fff]"
-    href={`mailto:${email}`}>Get in Touch</a
-  >
+      <div>
+        <!-- Greeting badge -->
+        <div class="inline-flex items-center gap-2 neo-badge bg-[#C084FC] text-black mb-4">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 border border-black animate-pulse"></span>
+          <span>AVAILABLE FOR SOFTWARE ENGINEER & BACKEND ROLES</span>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-black leading-none mb-3">
+          {name}
+        </h1>
+
+        <!-- Specialty subtitle -->
+        <div class="inline-block bg-[#2563EB] text-white px-3 py-1 font-mono text-sm sm:text-base font-bold border-2 border-black shadow-[2px_2px_0px_#000] mb-5">
+          {specialty}
+        </div>
+
+        <!-- LinkedIn Tagline Banner -->
+        {tagline && (
+          <div class="border-l-4 border-[#2563EB] bg-blue-50/80 p-3 sm:p-4 mb-5 border-y-2 border-r-2 border-black shadow-[2px_2px_0px_#000]">
+            <p class="font-serif italic text-base sm:text-lg font-bold text-[#1D4ED8]">
+              "{tagline}"
+            </p>
+          </div>
+        )}
+
+        <!-- Bio summary -->
+        <p class="text-sm sm:text-base text-gray-700 leading-relaxed font-sans mb-6">
+          {summary}
+        </p>
+      </div>
+
+      <div>
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap items-center gap-3 sm:gap-4 mb-6">
+          <a
+            href="#projects"
+            class="neo-btn bg-[#A3E635] text-black hover:bg-[#86efac]"
+          >
+            <span>VIEW MY WORK</span>
+            <span>&nearr;</span>
+          </a>
+          <a
+            href={`mailto:${email}`}
+            class="neo-btn bg-white text-black hover:bg-gray-100"
+          >
+            <span>GET IN TOUCH</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+
+        <!-- Social Links strip -->
+        <div class="pt-4 border-t-2 border-dashed border-gray-300 flex flex-wrap items-center gap-3">
+          <span class="font-mono text-xs font-bold uppercase text-gray-500">CONNECT:</span>
+          <a
+            href="https://github.com/abrahamkusnadi"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="neo-badge bg-white hover:bg-[#FDE047] transition-colors"
+          >
+            GitHub &nearr;
+          </a>
+          <a
+            href="https://www.linkedin.com/in/abrahamkusnadi"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="neo-badge bg-[#2563EB] text-white hover:bg-[#1D4ED8] transition-colors"
+          >
+            LinkedIn &nearr;
+          </a>
+          <a
+            href={`mailto:${email}`}
+            class="neo-badge bg-white hover:bg-[#FDA4AF] transition-colors"
+          >
+            Email &nearr;
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Hero: Interactive Retro CLI Terminal & System Stats -->
+    <div class="lg:col-span-5 flex flex-col justify-between gap-4">
+      <!-- Retro CLI Terminal Window -->
+      <div class="neo-card bg-[#0F172A] text-white p-0 overflow-hidden flex-1 flex flex-col shadow-[5px_5px_0px_#000]">
+        <!-- Terminal Title Bar -->
+        <div class="bg-[#1E293B] px-4 py-2.5 border-b-2 border-black flex items-center justify-between font-mono text-xs text-gray-300">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-[#EF4444] border border-black inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-[#F59E0B] border border-black inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-[#10B981] border border-black inline-block"></span>
+          </div>
+          <span class="font-bold text-gray-400">abraham@server:~</span>
+          <span class="text-[10px] text-gray-500">bash</span>
+        </div>
+
+        <!-- Terminal Body / Command Log -->
+        <div class="p-4 sm:p-5 font-mono text-xs leading-relaxed space-y-3 flex-1 overflow-x-auto">
+          <!-- Command 1: whoami -->
+          <div>
+            <p class="text-gray-400">
+              <span class="text-[#A3E635]">abraham@backend</span>:<span class="text-[#60A5FA]">~</span>$ whoami
+            </p>
+            <p class="text-[#FDE047] font-semibold pl-2">
+              &gt; Abraham Kusnadi — Software Engineer &amp; Backend Developer
+            </p>
+          </div>
+
+          <!-- Command 2: stack config -->
+          <div>
+            <p class="text-gray-400">
+              <span class="text-[#A3E635]">abraham@backend</span>:<span class="text-[#60A5FA]">~</span>$ cat core-stack.json
+            </p>
+            <div class="pl-2 text-gray-300 bg-[#1E293B]/60 p-2 rounded border border-gray-700/80 my-1">
+              <p>&#123;</p>
+              <p class="pl-3"><span class="text-[#60A5FA]">"languages"</span>: [<span class="text-[#A3E635]">"Go (Gin)"</span>, <span class="text-[#A3E635]">"Java (Spring)"</span>, <span class="text-[#A3E635]">"PHP (Laravel)"</span>],</p>
+              <p class="pl-3"><span class="text-[#60A5FA]">"databases"</span>: [<span class="text-[#A3E635]">"PostgreSQL"</span>, <span class="text-[#A3E635]">"MySQL"</span>, <span class="text-[#A3E635]">"Redis"</span>],</p>
+              <p class="pl-3"><span class="text-[#60A5FA]">"pipeline"</span>: [<span class="text-[#A3E635]">"Apache Kafka"</span>, <span class="text-[#A3E635]">"Splunk"</span>, <span class="text-[#A3E635]">"SFTP"</span>]</p>
+              <p>&#125;</p>
+            </div>
+          </div>
+
+          <!-- Command 3: system status -->
+          <div>
+            <p class="text-gray-400">
+              <span class="text-[#A3E635]">abraham@backend</span>:<span class="text-[#60A5FA]">~</span>$ systemctl status architecture.service
+            </p>
+            <p class="text-emerald-400 pl-2 font-bold flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span>● ACTIVE: Scalable, Normalized, Production-Ready</span>
+            </p>
+          </div>
+
+          <!-- Interactive cursor line -->
+          <div class="pt-1 flex items-center gap-1 text-gray-400">
+            <span class="text-[#A3E635]">abraham@backend</span>:<span class="text-[#60A5FA]">~</span>$
+            <span class="inline-block w-2 h-4 bg-[#60A5FA] animate-pulse"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Bento Bar below Terminal -->
+      <div class="grid grid-cols-3 gap-2.5 sm:gap-3">
+        <!-- Metric 1 -->
+        <div class="neo-card bg-[#A3E635] p-3 text-center">
+          <div class="font-serif text-xl sm:text-2xl font-black text-black">50+</div>
+          <div class="font-mono text-[10px] font-bold uppercase text-black leading-tight mt-0.5">Mentees Guided</div>
+        </div>
+
+        <!-- Metric 2 -->
+        <div class="neo-card bg-[#FDE047] p-3 text-center">
+          <div class="font-serif text-xl sm:text-2xl font-black text-black">1 YR</div>
+          <div class="font-mono text-[10px] font-bold uppercase text-black leading-tight mt-0.5">Industry Exp</div>
+        </div>
+
+        <!-- Metric 3 -->
+        <div class="neo-card bg-[#C084FC] p-3 text-center">
+          <div class="font-serif text-xl sm:text-2xl font-black text-black">4+</div>
+          <div class="font-mono text-[10px] font-bold uppercase text-black leading-tight mt-0.5">CORE LANGUAGES</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
