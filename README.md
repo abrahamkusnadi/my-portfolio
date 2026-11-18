@@ -3,7 +3,7 @@
 # ⚡ Abraham Kusnadi — Personal Portfolio Website
 
 [![Live Website](https://img.shields.io/badge/Live_Demo-abrahamkusnadi.vercel.app-2563EB?style=for-the-badge&logo=vercel&logoColor=white)](https://abrahamkusnadi.vercel.app/)
-[![Astro](https://img.shields.io/badge/Astro_v6-BC52EE?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build/)
+[![Astro](https://img.shields.io/badge/Astro_v7-BC52EE?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/abrahamkusnadi/)
@@ -32,7 +32,7 @@ The site adopts a bold **Neo-Brutalist** aesthetic combined with high-performanc
   - High-contrast black borders (`2.5px solid #000`) and rigid drop-shadows (`4px 4px 0px #000`).
   - Subtle architectural graph-grid background pattern.
   - Vibrant retro accent palettes (Electric Blue `#2563EB`, Neo-Lime `#A3E635`, Bright Yellow `#FDE047`, Soft Purple `#C084FC`).
-  - Distinct typography pairing: **Gabarito** for bold editorial serif headlines and **Be Vietnam Pro** for clean, readable body copy.
+  - Distinct typography pairing: **Gabarito** for bold geometric sans-serif headlines and **Be Vietnam Pro** for clean, readable body copy.
 
 - **Interactive Retro CLI Terminal:**
   - A bash-inspired terminal window embedded directly in the hero section displaying runtime simulation (`whoami`, `cat core-stack.json`, `systemctl status architecture.service`).
@@ -50,7 +50,7 @@ The site adopts a bold **Neo-Brutalist** aesthetic combined with high-performanc
 
 ## 🛠️ Tech Stack
 
-- **Core Framework:** [Astro v6](https://astro.build/) (Island Architecture, static site generation, ultra-fast initial page load)
+- **Core Framework:** [Astro v7](https://astro.build/) (Island Architecture, static site generation, ultra-fast initial page load)
 - **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) (integrated via `@tailwindcss/vite` with custom theme tokens)
 - **Language:** [TypeScript](https://www.typescriptlang.org/) (strict type definitions for all section props and configuration schemas)
 - **Hosting & Analytics:** [Vercel](https://vercel.com/) with `@vercel/analytics`
@@ -92,7 +92,7 @@ my-portfolio/
 
 ### Prerequisites
 
-Ensure you have [Node.js](https://nodejs.org/) (v18.17.1 or higher) and [pnpm](https://pnpm.io/) (or npm / yarn) installed.
+Ensure you have [Node.js](https://nodejs.org/) (v22.12.0 or higher; tested on v24.15.0) and [pnpm](https://pnpm.io/) (or npm / yarn) installed.
 
 ### 1. Clone the Repository
 
@@ -141,7 +141,7 @@ The production-ready static output will be generated inside the `dist/` director
 ---
 
 <div align="center">
-  <sub>
-    Designed &amp; Developed with ⚡ by <b>Abraham Kusnadi</b> • Powered by Astro &amp; Tailwind CSS • Design Inspired by <a href="https://id.pinterest.com/pin/1072349361292329302/">Pinterest</a>
-  </sub>
+  <sub>Designed &amp; Developed with ⚡ by <b>Abraham Kusnadi</b>. Powered by Astro &amp; Tailwind CSS.</sub>
+  <br />
+  <sub>Design Inspired by <a href="https://id.pinterest.com/pin/1072349361292329302/" target="_blank">Neo-Brutalist Portfolio Concept on Pinterest</a>.</sub>
 </div>
