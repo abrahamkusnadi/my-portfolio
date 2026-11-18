@@ -3,7 +3,7 @@
 # ⚡ Abraham Kusnadi — Personal Portfolio Website
 
 [![Live Website](https://img.shields.io/badge/Live_Demo-abrahamkusnadi.vercel.app-2563EB?style=for-the-badge&logo=vercel&logoColor=white)](https://abrahamkusnadi.vercel.app/)
-[![Astro](https://img.shields.io/badge/Astro_v7-BC52EE?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build/)
+[![Astro](https://img.shields.io/badge/Astro_v6-BC52EE?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/abrahamkusnadi/)
@@ -141,5 +141,7 @@ The production-ready static output will be generated inside the `dist/` director
 ---
 
 <div align="center">
-  <sub>Designed &amp; Developed with ⚡ by <b>Abraham Kusnadi</b>. Powered by Astro &amp; Tailwind CSS.</sub>
+  <sub>
+    Designed &amp; Developed with ⚡ by <b>Abraham Kusnadi</b> • Powered by Astro &amp; Tailwind CSS • Design Inspired by <a href="https://id.pinterest.com/pin/1072349361292329302/">Pinterest</a>
+  </sub>
 </div>
